@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import ScreenshotsComponent from "../../components/Screenshots/";
+import ScreenshotsComponent from "../components/Screenshots";
 
 export default class Screenshots extends Component {
     constructor(props, ...args) {
@@ -22,7 +22,11 @@ export default class Screenshots extends Component {
         if (!kind) {
             return null;
         }
-        const domain = 'http://localhost:8000/';
+        // TODO: Need to find a good way to get the domain. Relying on the `window` is not... nice.
+        const domain = window.STORYBOOK_ADDON_GEMINI_DOMAIN;
+        if (!domain) {
+            return <p>Please configure `window.STORYBOOK_ADDON_GEMINI_DOMAIN` to the host + port where Gemini GUI is running</p>;
+        }
         const combinedName = `${kind}: ${story}`;
         const url = `${domain}?suite=${encodeURIComponent(combinedName)}`;
         return <ScreenshotsComponent iframeUrl={url} />;

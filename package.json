@@ -2,7 +2,7 @@
   "name": "storybook-addon-gemini",
   "version": "1.0.15",
   "description": "Add screenshot tests to your react storybook stories",
-  "main": "dist/index.js",
+  "main": "index.js",
   "author": "Kees Kluskens <kees@codeyellow.nl>",
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",

@@ -10,7 +10,7 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Screenshots = require("../../components/Screenshots/");
+var _Screenshots = require("../components/Screenshots");
 
 var _Screenshots2 = _interopRequireDefault(_Screenshots);
 
@@ -63,7 +63,15 @@ var Screenshots = function (_Component) {
             if (!kind) {
                 return null;
             }
-            var domain = 'http://localhost:8000/';
+            // TODO: Need to find a good way to get the domain. Relying on the `window` is not... nice.
+            var domain = window.STORYBOOK_ADDON_GEMINI_DOMAIN;
+            if (!domain) {
+                return _react2.default.createElement(
+                    "p",
+                    null,
+                    "Please configure `window.STORYBOOK_ADDON_GEMINI_DOMAIN` to the host + port where Gemini GUI is running"
+                );
+            }
             var combinedName = kind + ": " + story;
             var url = domain + "?suite=" + encodeURIComponent(combinedName);
             return _react2.default.createElement(_Screenshots2.default, { iframeUrl: url });
