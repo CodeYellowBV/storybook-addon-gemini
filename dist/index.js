@@ -15,4 +15,3 @@ Object.defineProperty(exports, 'register', {
 // addons, panels and events get unique names using a prefix
 var ADDON_ID = exports.ADDON_ID = 'storybook-addon-gemini';
 var PANEL_ID = exports.PANEL_ID = ADDON_ID + '/gemini-panel';
-var EVENT_ID = exports.EVENT_ID = ADDON_ID + '/gemini-event';

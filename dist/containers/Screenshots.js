@@ -14,8 +14,6 @@ var _Screenshots = require("../../components/Screenshots/");
 
 var _Screenshots2 = _interopRequireDefault(_Screenshots);
 
-var _ = require("../../");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -57,11 +55,18 @@ var Screenshots = function (_Component) {
     }, {
         key: "render",
         value: function render() {
+            var _state = this.state,
+                kind = _state.kind,
+                story = _state.story;
             // TODO: can this ever happen? If so, we should show some message.
-            if (!this.state.kind) {
+
+            if (!kind) {
                 return null;
             }
-            return _react2.default.createElement(_Screenshots2.default, { kind: this.state.kind, story: this.state.story });
+            var domain = 'http://localhost:8000/';
+            var combinedName = kind + ": " + story;
+            var url = domain + "?suite=" + encodeURIComponent(combinedName);
+            return _react2.default.createElement(_Screenshots2.default, { iframeUrl: url });
         }
     }]);
 

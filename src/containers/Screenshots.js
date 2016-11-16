@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 import ScreenshotsComponent from "../../components/Screenshots/";
-import {EVENT_ID} from "../../";
-
 
 export default class Screenshots extends Component {
     constructor(props, ...args) {
@@ -19,10 +17,14 @@ export default class Screenshots extends Component {
     }
 
     render() {
+        let { kind, story } = this.state;
         // TODO: can this ever happen? If so, we should show some message.
-        if (!this.state.kind) {
+        if (!kind) {
             return null;
         }
-        return <ScreenshotsComponent kind={this.state.kind} story={this.state.story} />;
+        const domain = 'http://localhost:8000/';
+        const combinedName = `${kind}: ${story}`;
+        const url = `${domain}?suite=${encodeURIComponent(combinedName)}`;
+        return <ScreenshotsComponent iframeUrl={url} />;
     }
 }
