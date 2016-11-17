@@ -4,9 +4,9 @@
 
 This addon for storybook will allow you to see Gemini screenshot tests directly inside your storybook.
 
-**This is a Work in Progress. At the moment this depends on some modifications on the `gemini-gui` package, which I need to PR first. So don't use it yet!!**
+**This is a Work in Progress. At the moment this depends on some modifications on the `gemini-gui` package (see [this PR](https://github.com/gemini-testing/gemini-gui/pull/72)). So don't use it yet!!**
 
-A lot of it is either copied or inspired from [storybook-addon-specifications](https://github.com/mthuret/storybook-addon-specifications).
+This package is inspired a lot from [storybook-addon-specifications](https://github.com/mthuret/storybook-addon-specifications).
 
 \*insert screenshot\*
 
@@ -54,3 +54,8 @@ gemini.suite('Button: with text', (suite) => {
         .capture('plain');
 });
 ```
+
+## Roadmap
+
+Currently this addon uses an iframe with the Gemini GUI tests in it.
+Optimally, we would only use the backend of Gemini GUI. We could implement the frontend in this addon. That way we can style it better, and make the UI a bit simpler.
