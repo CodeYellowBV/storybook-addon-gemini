@@ -19,7 +19,9 @@
     "gemini"
   ],
   "files": [
-    "dist"
+    "dist",
+    "index.js",
+    "register.js"
   ],
   "license": "MIT",
   "bugs": {
