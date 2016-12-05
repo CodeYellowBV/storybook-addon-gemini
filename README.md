@@ -2,7 +2,7 @@
 
 > **Needs at least [react-storybook](https://github.com/kadirahq/react-storybook) 2.2.1**
 
-This addon for storybook will allow you to see Gemini screenshot tests directly inside your storybook.
+This addon for [Storybook](https://getstorybook.io/) will allow you to see Gemini screenshot tests directly inside your Storybook. It will show only the relevant Gemini tests for the currently selected story.
 
 **This is a Work in Progress. At the moment this depends on some modifications on the `gemini-gui` package (see [this PR](https://github.com/gemini-testing/gemini-gui/pull/72)). So don't use it yet!!**
 
@@ -12,13 +12,13 @@ This package is inspired a lot from [storybook-addon-specifications](https://git
 
 ## Getting Started
 
-First, install the addon
+First, install the addon:
 
 ```shell
 npm install -D storybook-addon-gemini
 ```
 
-Add these lines to your `addons.js` file (create this file inside your storybook config directory if needed).
+Add these lines to your `addons.js` file (create this file inside your Storybook config directory if needed).
 
 ```js
 import 'storybook-addon-gemini/register';
