@@ -8,7 +8,7 @@ This addon for storybook will allow you to see Gemini screenshot tests directly 
 
 This package is inspired a lot from [storybook-addon-specifications](https://github.com/mthuret/storybook-addon-specifications).
 
-\*insert screenshot\*
+![Screenshot of addon](./image.png)
 
 ## Getting Started
 
@@ -32,9 +32,9 @@ Make sure [Gemini](https://github.com/gemini-testing/gemini) and [Gemini GUI](ht
 
 ## Writing Gemini tests
 
-This addon does not care where your Gemini tests live, so you can follow the original documentation for that.
+This addon does not care where in your folder structure the Gemini tests live, so you can follow the original documentation for that.
 
-In the Gemini config file, make sure that `rootUrl` is set to the domain the Storybook runs on. So by default your `.gemini.js` file would look something like this:
+In the Gemini config file, make sure that `rootUrl` is set to the domain the Storybook runs on. So, using Storybook's default port, your `.gemini.js` file would look like this:
 
 ```js
 module.exports = {
